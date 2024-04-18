@@ -28,5 +28,8 @@ jobs:
           # CUSTOM_DOMAIN: optionaldomain.com
           CONFIG_FILE: 2324Portfolio/mkdocs.yml
           # EXTRA_PACKAGES: build-base
-          # GITHUB_DOMAIN: MrDaviesKellett.github.io
+          # remote_repo="https://x-access-token:${PERSONAL_TOKEN}@${GITHUB_DOMAIN:-"github.com"}/${GITHUB_REPOSITORY}.git"
+          # https://github.com/MrDaviesKellett/MrDaviesKellett.github.io.git
+          # GITHUB_DOMAIN: MrDaviesKellett
+          GITHUB_REPOSITORY: MrDaviesKellett.github.io #.git
           # REQUIREMENTS: 2324Portfolio/requirements.txt
