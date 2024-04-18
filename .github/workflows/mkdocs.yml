@@ -26,6 +26,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # CUSTOM_DOMAIN: optionaldomain.com
           CONFIG_FILE: 2324Portfolio/mkdocs.yml
-          EXTRA_PACKAGES: build-base
-          GITHUB_DOMAIN: MrDaviesKellett.github.io
-          REQUIREMENTS: 2324Portfolio/requirements.txt
+          # EXTRA_PACKAGES: build-base
+          # GITHUB_DOMAIN: MrDaviesKellett.github.io
+          # REQUIREMENTS: 2324Portfolio/requirements.txt
