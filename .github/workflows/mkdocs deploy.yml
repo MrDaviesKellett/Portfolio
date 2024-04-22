@@ -18,18 +18,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
-      # Deploy mkdocs website
-      - name: Deploy MkDocs
-        uses: mhausenblas/mkdocs-deploy-gh-pages@1.26
-        env:
-          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PERSONAL_TOKEN: ${{ secrets.MKDOCS_PERSONAL_TOKEN }}
-          # CUSTOM_DOMAIN: optionaldomain.com
-          CONFIG_FILE: 2324Portfolio/mkdocs.yml
-          # EXTRA_PACKAGES: build-base
-          # remote_repo="https://x-access-token:${PERSONAL_TOKEN}@${GITHUB_DOMAIN:-"github.com"}/${GITHUB_REPOSITORY}.git"
-          # https://github.com/MrDaviesKellett/MrDaviesKellett.github.io.git
-          GITHUB_DOMAIN: "" # MrDaviesKellett
-          GITHUB_REPOSITORY: MrDaviesKellett/MrDaviesKellett.github.io #.git
-          # REQUIREMENTS: 2324Portfolio/requirements.txt
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - uses: actions/cache@v2
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+      - run: pip install mkdocs-material
+      - run: pip install pillow cairosvg
+      - run: mkdocs gh-deploy --force
