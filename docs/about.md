@@ -1,2 +1,1 @@
-# Martin Davies - Computer Science Teacher
-
+# About
