@@ -52,7 +52,20 @@ nav:
 plugins:
   - search: {}
   - encryptcontent:
-      password_file: 'passwords.yml'
+      password_inventory:
+        admin: !ENV MKDOCS_ADMIN_PASSWORD
+        staff: !ENV MKDOCS_STAFF_PASSWORD
+        student: !ENV MKDOCS_STUDENT_PASSWORD
+      title_prefix: '🔒 '
+      summary: 'You do not have access to this page'
+      placeholder: 'enter password'
+      decryption_failure_message: 'Incorrect Password'
+      encryption_info_message: "Enter the password to view this page"
+      button_class: 'md-search__icon'
+      search_index: 'dynamically'
+      encrypted_something:
+        md-footer__inner: [nav, class] #Footer
+        md-nav: [nav, class] #Menu and toc
   
 
 markdown_extensions:
@@ -69,7 +82,7 @@ markdown_extensions:
   - pymdownx.mark
   - attr_list
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
 extra:

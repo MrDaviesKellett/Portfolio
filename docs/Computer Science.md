@@ -1,9 +1,14 @@
+---
+level: student
+---
+
 # Computer Science Curriculum
 
 ## Year 7
 
 ## Years 8 & 9
-Have a look at the [coding](../coding) section
+
+Have a look at the [coding](./Coding.md) section
 
 ## Year 10 & 11
 
