@@ -44,7 +44,6 @@ extra_css:
 
 nav:
   - 'index.md'
-  - 'about.md'
   
 
 markdown_extensions:
