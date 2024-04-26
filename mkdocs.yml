@@ -53,9 +53,9 @@ plugins:
   - search: {}
   - encryptcontent:
       password_inventory:
-        admin: !ENV [MKDOCS_ADMIN_PASSWORD,!!python/object/apply:os.getenv ["MKDOCS_ADMIN_PASSWORD"]]
-        staff: !ENV [MKDOCS_STAFF_PASSWORD,!!python/object/apply:os.getenv ["MKDOCS_STAFF_PASSWORD"]]
-        student: !ENV [MKDOCS_STUDENT_PASSWORD,!!python/object/apply:os.getenv ["MKDOCS_STUDENT_PASSWORD"]]
+        admin: !ENV MKDOCS_ADMIN_PASSWORD
+        staff: !ENV MKDOCS_STAFF_PASSWORD
+        student: !ENV MKDOCS_STUDENT_PASSWORD
       title_prefix: '🔒 '
       summary: 'You do not have access to this page'
       placeholder: 'enter password'
