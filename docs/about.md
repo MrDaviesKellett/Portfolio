@@ -1,10 +1,16 @@
+---
+title: About
+description: All about Martin Davies
+level: staff
+--- 
+
 # About
 
 ## Martin Davies
 
 ![Martin Davies](./Assets/MDavies.jpeg){width="33%" align="right"}
 
-!!! abstract "About Martin Davies" 
+!!! abstract "About Martin Davies"
 
     Martin Davies is a passionate computer science teacher with a unique blend of industry experience and teaching expertise. His journey began in the animation and visual effects industry, where he developed a strong foundation in programming and 3D animation. After transitioning to teaching, he has been able to bring his industry experience to the classroom, making computer science education more engaging and relevant to his students.
 
@@ -34,7 +40,7 @@ Martin's industry experience has also given him a unique perspective on the impo
 
 ![Martin Davies](./Assets/abstractCSconcepts.png){width="33%" align="left"}
 
-As a computer science teacher, Martin has had the opportunity to inspire and educate students of various ages and skill levels. His teaching experience has equipped him with the ability to adapt his teaching style to meet the needs of diverse learners. Martin has taught a range of programming languages, including Python, Haskell, C# and Assembly languages. 
+As a computer science teacher, Martin has had the opportunity to inspire and educate students of various ages and skill levels. His teaching experience has equipped him with the ability to adapt his teaching style to meet the needs of diverse learners. Martin has taught a range of programming languages, including Python, Haskell, C# and Assembly languages.
 
 One of his notable achievements is introducing **Coding** as a language option for Year 8 and 9 students instead of having a rigid and compulsary Computer Science course for these yeargroups. This innovative approach has proved to be an excellent choice, leading to better engagement in the subject and preparing students for the challenges of the Computer Science GCSE course in Year 10. By introducing coding at an earlier stage, Martin has been able to foster a strong foundation in programming concepts, enabling students to develop a deeper understanding of the subject and build a strong foundation for their future studies.
 
@@ -51,6 +57,7 @@ Through the Innovation subject, Martin aims to provide students with a platform 
 [Image suggestion: A graphic illustrating the various projects and themes explored in the Innovation subject, with images or icons representing each project.]
 
 ## Extracurricular Activities
+
 ### Blender Modelling ECA
 
 The Blender Modelling ECA is an extracurricular activity that Martin leads, where students learn the basics of 3D modelling and animation using Blender. This activity provides students with an opportunity to explore their creative side, develop their problem-solving skills, and work collaboratively with their peers.
@@ -68,6 +75,7 @@ Through the coding clubs, Martin aims to provide students with a platform to dev
 [Image suggestion: A photo of students working on a coding project, with laptops and coding materials scattered around the room.]
 
 ## Skills
+
 ### Programming Languages
 
 * Python
