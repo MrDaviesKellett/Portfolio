@@ -11,6 +11,11 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
+env:
+  MKDOCS_ADMIN_PASSWORD: ${{ secrets.MKDOCS_ADMIN_PASSWORD }}
+  MKDOCS_STAFF_PASSWORD: ${{ secrets.MKDOCS_STAFF_PASSWORD }}
+  MKDOCS_STUDENT_PASSWORD: ${{ secrets.MKDOCS_STUDENT_PASSWORD }}
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
