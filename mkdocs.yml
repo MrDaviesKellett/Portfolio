@@ -54,8 +54,13 @@ plugins:
   - encryptcontent:
       password_inventory:
         admin: !ENV MKDOCS_ADMIN_PASSWORD
-        staff: !ENV MKDOCS_STAFF_PASSWORD
-        student: !ENV MKDOCS_STUDENT_PASSWORD
+        staff: 
+          - !ENV MKDOCS_STAFF_PASSWORD
+          - !ENV MKDOCS_ADMIN_PASSWORD
+        student: 
+          - !ENV MKDOCS_STUDENT_PASSWORD
+          - !ENV MKDOCS_STAFF_PASSWORD
+          - !ENV MKDOCS_ADMIN_PASSWORD
       title_prefix: '🔒 '
       summary: 'You do not have access to this page'
       placeholder: 'enter password'
