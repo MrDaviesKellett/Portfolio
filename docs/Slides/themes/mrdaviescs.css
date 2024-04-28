@@ -1,0 +1,389 @@
+@charset "UTF-8";
+/*!
+ * Marp mrdaviescs theme.
+ * @theme mrdaviescs
+ * @author Martin Davies
+ *
+ * @auto-scaling true
+ * @size 4:3 960px 720px
+ * @size 16:9 1280px 720px
+ * @size 4K 3840p× 2160px
+ */
+
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700|Source Code Pro:200,300,400,500,600,700,800,900|Roboto Condensed:700|Montserrat:100,200,300,400,500,600,700,800,900");
+
+:root {
+  --mrdaviescs-background: #27292e;
+  --mrdaviescs-current-line: #7b7f9d;
+  --mrdaviescs-tablealtline: #333541;
+  --mrdaviescs-foreground: #f8f8f2;
+  --mrdaviescs-quotemark: #fc69bc;
+  --mrdaviescs-headfoot: #5c606b;
+  --mrdaviescs-listelement: #f8f8f8;
+  --mrdaviescs-green: #50fa7b;
+  --mrdaviescs-blockquote: #ed9ac9;
+  --mrdaviescs-headings: #0fc49d;
+  --mrdaviescs-link: #cb9ffd;
+  --mrdaviescs-yellow: #ffd35d;
+  --mrdaviescs-codebackground: #23241f;
+
+  --mrdaviescs-titlefont: "Roboto Condensed";
+  --mrdaviescs-codefont: "Source Code Pro", monospace;
+  --mrdaviescs-bodyfont: Montserrat, light;
+}
+
+/*
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+*/
+
+.hljs {
+  background: #23241f;
+  color: #f8f8f2;
+}
+
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #cdc4a8;
+}
+
+svg[data-marp-fitting=svg] {
+  max-height: 580px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0.5em 0 0 0;
+  color: var(--mrdaviescs-headings);
+  font-weight: 500;
+  font-family: var(--mrdaviescs-titlefont);
+}
+
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong,
+h6 strong {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2em;
+  padding-top: 0.25em;
+}
+
+h2 {
+  font-size: 1.5em;
+  padding-top: 0.25em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.9em;
+}
+
+p,
+blockquote {
+  margin: 1em 0 0 0;
+}
+
+ul>li,
+ol>li {
+  margin: 0.3em 0 0 0;
+  color: var(--mrdaviescs-listelement);
+}
+
+ul>li>p,
+ol>li>p {
+  margin: 0.6em 0 0 0;
+}
+
+code {
+  display: inline-block;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 300;
+  font-size: 0.9em;
+  letter-spacing: 0;
+  margin: -0.1em 0.15em;
+  padding: 0.1em 0.2em;
+  vertical-align: baseline;
+  color: var(--mrdaviescs-green);
+}
+
+pre {
+  display: block;
+  margin: 1em 0 0 0;
+  min-height: 1em;
+  overflow: visible;
+}
+
+pre code {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 100%;
+  padding: 0.5em;
+  font-size: 0.7em;
+}
+
+pre code svg[data-marp-fitting=svg] {
+  max-height: calc(580px - 1em);
+}
+
+blockquote {
+  margin: 0 0 0 0;
+  padding: 1.5em 1.5em 0.8em 2em;
+  position: relative;
+  color: var(--mrdaviescs-blockquote);
+}
+
+blockquote::after,
+blockquote::before {
+  content: "“";
+  display: block;
+  font-family: "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 250%;
+  position: absolute;
+  color: var(--mrdaviescs-green);
+}
+
+blockquote::before {
+  top: 0.8em;
+  left: 0;
+}
+
+blockquote::after {
+  right: 0;
+  bottom: 0;
+  margin-bottom: -0.2em;
+  transform: rotate(180deg);
+}
+
+blockquote>*:first-child {
+  margin-top: 2.5em;
+  margin-left: 1.1em;
+  text-align: left;
+}
+
+mark {
+  background: transparent;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 1em 0 0 0;
+  width: 100%;
+  text-align: center;
+}
+
+table th,
+table td {
+  padding: 0.2em 0.4em;
+  border-width: 1px;
+  border-style: solid;
+}
+
+/*all pages*/
+
+section {
+  font-size: 2.3em;
+  font-family: var(--mrdaviescs-bodyfont);
+  font-weight:200;
+  line-height: 1.35;
+  letter-spacing: 1.25px;
+  padding: 70px;
+  color: var(--mrdaviescs-foreground);
+  background-color: var(--mrdaviescs-background);
+}
+
+/*First Page*/
+section[id="1"] {
+  line-height: 1.1;
+}
+section[id="1"] h1 {
+  padding-top: 1.5em;
+  text-align: center;
+}
+section[id="1"] h3 {
+  padding-top: .5em;
+  text-align: center;
+}
+
+section>*:first-child,
+section>header:first-child+* {
+  margin-top: 0;
+}
+
+/* following pages*/
+
+section b,em,strong{
+  font-weight: 500;
+}
+
+section a,
+section mark {
+  color: var(--mrdaviescs-link);
+}
+
+section code {
+  background: var(--mrdaviescs-codebackground);
+  color: var(--mrdaviescs-current-green);
+}
+
+section h1 strong,
+section h2 strong,
+section h3 strong,
+section h4 strong,
+section h5 strong,
+section h6 strong {
+  color: var(--mrdaviescs-current-line);
+}
+
+section pre>code {
+  background: var(--mrdaviescs- --mrdaviescs-codebackground:);
+}
+
+section header,
+section footer,
+section section::after,
+section blockquote::before,
+section blockquote::after {
+  color: var(--mrdaviescs-quotemark);
+}
+
+section table th,
+section table td {
+  border-color: var(--mrdaviescs-tablealtline);
+}
+
+section table thead th {
+  background: var(--mrdaviescs-tablealtline);
+  color: var(--mrdaviescs-yellow);
+}
+
+section table tbody>tr:nth-child(even) td,
+section table tbody>tr:nth-child(even) th {
+  background: var(--mrdaviescs-tablealtline);
+}
+
+header,
+footer,
+section::after {
+  box-sizing: border-box;
+  font-size: 80%;
+  height: 70px;
+  line-height: 50px;
+  overflow: hidden;
+  padding: 10px 25px;
+  position: absolute;
+  color: var(--mrdaviescs-headfoot);
+}
+
+header {
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+section::after {
+  right: 0;
+  bottom: 0;
+  font-size: 70%;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.larger {
+  font-size: larger;
+}
