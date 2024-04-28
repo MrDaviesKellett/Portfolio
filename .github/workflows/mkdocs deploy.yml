@@ -51,9 +51,6 @@ jobs:
       - name: mkdocs - Deploy mkdocs
         run: mkdocs gh-deploy --force
 
-      - name: marp - Checkout code
-        uses: actions/checkout@v4
-
       - name: marp - Copy images directory (if exists)
         run: if [[ -d docs/Slides/img ]]; then cp -R img site/img; fi
 
