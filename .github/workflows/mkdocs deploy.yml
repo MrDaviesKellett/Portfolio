@@ -54,11 +54,8 @@ jobs:
       - name: marp - Checkout code
         uses: actions/checkout@v4
 
-      - name: marp - Ensure buildmarp dir exists
-        run: mkdir -p buildmarp
-
       - name: marp - Copy images directory (if exists)
-        run: if [[ -d docs/Slides/img ]]; then cp -R img buildmarp/img; fi
+        run: if [[ -d docs/Slides/img ]]; then cp -R img site/img; fi
 
       - name: marp - Check if docs/Slides folder exists
         id: docs-folder-exists
@@ -68,7 +65,7 @@ jobs:
         if: steps.docs-folder-exists.outputs.has_docs == '0'
         uses: docker://marpteam/marp-cli:v3.0.2
         with:
-          args: -I docs/Slides/ -o buildmarp/docs/Slides/
+          args: -I docs/Slides/ -o site/docs/Slides/
         env:
           MARP_USER: root:root
 
@@ -77,7 +74,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: ./buildmarp/
+          folder: ./site/
           clean-exclude: pr-preview/
           
       
