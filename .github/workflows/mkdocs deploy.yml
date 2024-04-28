@@ -62,7 +62,7 @@ jobs:
         if: steps.docs-folder-exists.outputs.has_docs == '0'
         uses: docker://marpteam/marp-cli:v3.0.2
         with:
-          args: -I /Slides/ -o site/docs/Slides/
+          args: -I docs/Slides/ -o site/Slides/
         env:
           MARP_USER: root:root
 
