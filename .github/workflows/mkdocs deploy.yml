@@ -18,68 +18,60 @@ env:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  buildmarp:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
     steps:
 
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Ensure buildmarp dir exists
-        run: mkdir -p buildmarp
-
-      - name: Copy images directory (if exists)
-        run: if [[ -d docs/Slides/img ]]; then cp -R img buildmarp/img; fi
-
-      - name: Check if docs/Slides folder exists
-        id: docs-folder-exists
-        run: bash -c "[[ -d docs/Slides/ ]] ; echo \"has_docs=\$?\" >> \"$GITHUB_OUTPUT\""
-
-      - name: Marp Build (docs/Slides folder, if exists)
-        if: steps.docs-folder-exists.outputs.has_docs == '0'
-        uses: docker://marpteam/marp-cli:v3.0.2
-        with:
-          args: -I docs/Slides/ -o buildmarp/docs/
-        env:
-          MARP_USER: root:root
-
-      - name: Deploy production
-        if: ${{ github.event_name == 'push' }}
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: ./buildmarp/
-          clean-exclude: pr-preview/
-          
-  buildmkdocs:
-    runs-on: ubuntu-latest
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout Code
+      - name: mkdocs - Checkout Code
         uses: actions/checkout@v4
         
-      - name: Setup Python
+      - name: mkdocs - Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.x
 
-      - name: Setup Cache
+      - name: mkdocs - Setup Cache
         uses: actions/cache@v2
         with:
           key: ${{ github.ref }}
           path: .cache
           
-      - name: Install mkdocs
+      - name: mkdocs - Install mkdocs
         run: pip install mkdocs-material
 
-      - name: Install pillow cairosvg
+      - name: mkdocs - Install pillow cairosvg
         run: pip install pillow cairosvg
 
-      - name: Install mkdocs encryption
+      - name: mkdocs - Install mkdocs encryption
         run: pip install mkdocs-encryptcontent-plugin
         
-      - name: Deploy mkdocs
+      - name: mkdocs - Deploy mkdocs
         run: mkdocs gh-deploy --force
+
+      - name: marp - Copy images directory (if exists)
+        run: if [[ -d docs/Slides/img ]]; then cp -R img site/img; fi
+
+      - name: marp - Check if docs/Slides folder exists
+        id: docs-folder-exists
+        run: bash -c "[[ -d docs/Slides/ ]] ; echo \"has_docs=\$?\" >> \"$GITHUB_OUTPUT\""
+
+      - name: marp - Marp Build (docs/Slides folder, if exists)
+        if: steps.docs-folder-exists.outputs.has_docs == '0'
+        uses: docker://marpteam/marp-cli:v3.0.2
+        with:
+          args: -I docs/Slides/ -o site/Slides/
+        env:
+          MARP_USER: root:root
+
+      - name: marp - Deploy production
+        if: ${{ github.event_name == 'push' }}
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: ./site/
+          clean-exclude: pr-preview/
+          
+      
