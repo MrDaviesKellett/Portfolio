@@ -18,35 +18,61 @@ env:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  buildmarp:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
     steps:
 
-      - name: Checkout code
+      - name: mkdocs - Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: mkdocs - Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: mkdocs - Setup Cache
+        uses: actions/cache@v2
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+          
+      - name: mkdocs - Install mkdocs
+        run: pip install mkdocs-material
+
+      - name: mkdocs - Install pillow cairosvg
+        run: pip install pillow cairosvg
+
+      - name: mkdocs - Install mkdocs encryption
+        run: pip install mkdocs-encryptcontent-plugin
+        
+      - name: mkdocs - Deploy mkdocs
+        run: mkdocs gh-deploy --force
+
+      - name: marp - Checkout code
         uses: actions/checkout@v4
 
-      - name: Ensure buildmarp dir exists
+      - name: marp - Ensure buildmarp dir exists
         run: mkdir -p buildmarp
 
-      - name: Copy images directory (if exists)
+      - name: marp - Copy images directory (if exists)
         run: if [[ -d docs/Slides/img ]]; then cp -R img buildmarp/img; fi
 
-      - name: Check if docs/Slides folder exists
+      - name: marp - Check if docs/Slides folder exists
         id: docs-folder-exists
         run: bash -c "[[ -d docs/Slides/ ]] ; echo \"has_docs=\$?\" >> \"$GITHUB_OUTPUT\""
 
-      - name: Marp Build (docs/Slides folder, if exists)
+      - name: marp - Marp Build (docs/Slides folder, if exists)
         if: steps.docs-folder-exists.outputs.has_docs == '0'
         uses: docker://marpteam/marp-cli:v3.0.2
         with:
-          args: -I docs/Slides/ -o buildmarp/docs/
+          args: -I docs/Slides/ -o buildmarp/docs/Slides/
         env:
           MARP_USER: root:root
 
-      - name: Deploy production
+      - name: marp - Deploy production
         if: ${{ github.event_name == 'push' }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -54,32 +80,4 @@ jobs:
           folder: ./buildmarp/
           clean-exclude: pr-preview/
           
-  buildmkdocs:
-    runs-on: ubuntu-latest
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout Code
-        uses: actions/checkout@v4
-        
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.x
-
-      - name: Setup Cache
-        uses: actions/cache@v2
-        with:
-          key: ${{ github.ref }}
-          path: .cache
-          
-      - name: Install mkdocs
-        run: pip install mkdocs-material
-
-      - name: Install pillow cairosvg
-        run: pip install pillow cairosvg
-
-      - name: Install mkdocs encryption
-        run: pip install mkdocs-encryptcontent-plugin
-        
-      - name: Deploy mkdocs
-        run: mkdocs gh-deploy --force
+      
