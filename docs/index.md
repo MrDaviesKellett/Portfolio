@@ -6,6 +6,8 @@ Please find the tabs along the top for links to lesson materials and coding chal
 
 ## Slides test
 
-[Minecraft Intro](/docs/Slides/MinecraftIntro.html)
-[ChatGPT](/docs/Slides/chatGPT.html)
-[ChatGPTv2](/docs/Slides/chatGPT_v02.html)
+[Minecraft Intro](/Portfolio/Slides/MinecraftIntro.html)
+
+[ChatGPT](/Portfolio/Slides/chatGPT.html)
+
+[ChatGPTv2](/Portfolio/Slides/chatGPT_v02.html)
