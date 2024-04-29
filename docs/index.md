@@ -4,6 +4,6 @@ This website contains Mr Martin Davies' personal portfolio of work, resources an
 
 The [about](/about) page contains a summary of Mr Davies' career, principles and aspirations. _This page is accessable by staff with a password._
 
-The [curriculum](/curriculum) page contains the various curriculums that Mr Davies teaches in Computer Science, Coding and Innovation. This section contains a summary of the curriculum as well as slides and other teaching resources. _This page is accessable by staff and students with a password._
+The other pages are arranged by Bar Point progression requirments so as to provide ease of consideration for managers.
 
-the [challenges](/challenges) page contains various programming challenges that Mr Davies has created for his students to complete. _This page is accessable by staff and students with a password._
+Please follow the links along the top of this page. All pages are encrypted and accessable with the password provided.

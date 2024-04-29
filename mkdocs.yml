@@ -48,8 +48,16 @@ extra_css:
 nav:
   - 'index.md'
   - 'about.md'
-  - 'curriculum.md'
-  - 'challenges.md'
+  - 'interdepartmental.md'
+  - 'ECAs.md'
+  - 'CPD.md'
+  - 'TrainingAndResearch.md'
+  - 'EducationalDebates.md'
+  - 'DevelopsExpertise.md'
+  - 'ITUse.md'
+  - 'Marketing.md'
+  - 'Leadership.md'
+  - 'WorkingGroups.md'
 
 plugins:
   - search: {}
