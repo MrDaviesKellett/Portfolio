@@ -48,16 +48,7 @@ extra_css:
 nav:
   - 'index.md'
   - 'about.md'
-  - 'interdepartmental.md'
-  - 'ECAs.md'
-  - 'CPD.md'
-  - 'TrainingAndResearch.md'
-  - 'EducationalDebates.md'
-  - 'DevelopsExpertise.md'
-  - 'ITUse.md'
-  - 'Marketing.md'
-  - 'Leadership.md'
-  - 'WorkingGroups.md'
+  - 'barpoint.md'
 
 plugins:
   - search: {}
