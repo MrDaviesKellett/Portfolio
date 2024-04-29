@@ -48,6 +48,8 @@ extra_css:
 nav:
   - 'index.md'
   - 'about.md'
+  - 'curriculum.md'
+  - 'challenges.md'
 
 plugins:
   - search: {}
