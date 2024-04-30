@@ -26,3 +26,7 @@
     max-width: 66%;
     margin-inline: auto;
 }
+
+.md-typeset h5 {
+    font-size: 0pt;
+}
