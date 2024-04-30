@@ -61,4 +61,3 @@ Through the Innovation, Martin aims to provide students with a platform to explo
 The Blender ECA is an extracurricular activity that Martin leads, where students learn the basics of 3D modelling and animation using the industry standard software Blender. This activity provides students with an opportunity to explore their creative side, develop their problem-solving skills, and work collaboratively with their peers.
 
 Through the Blender ECA, Martin aims to provide students with a platform to express their creativity and develop their skills in 3D modelling and animation. By doing so, he hopes to inspire students to pursue careers in the fields of computer graphics, animation, and visual effects.
-
