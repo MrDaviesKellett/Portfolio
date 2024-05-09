@@ -51,13 +51,3 @@ Martin's commitment to creating a supportive and inclusive learning environment 
 Innovation is a unique program that Martin has developed, designed to expose students to a range of thoughts, professions, and innovations across various fields. Students work on three projects each academic year, exploring topics like Artificial Intelligence, Virtual Reality Experiences, and Board Game Development to name but a few. The focus is on developing transferable skills like resilience, problem-solving, and collaboration.
 
 Through the Innovation, Martin aims to provide students with a platform to explore their creativity and develop their problem-solving skills. By working on open-ended projects, students are encouraged to think creatively and develop innovative solutions to real-world problems.
-
-## Extracurricular Activities
-
-### Blender ECA
-
-![Martin Davies](./Assets/Blender.png){width="33%" align="right"}
-
-The Blender ECA is an extracurricular activity that Martin leads, where students learn the basics of 3D modelling and animation using the industry standard software Blender. This activity provides students with an opportunity to explore their creative side, develop their problem-solving skills, and work collaboratively with their peers.
-
-Through the Blender ECA, Martin aims to provide students with a platform to express their creativity and develop their skills in 3D modelling and animation. By doing so, he hopes to inspire students to pursue careers in the fields of computer graphics, animation, and visual effects.
