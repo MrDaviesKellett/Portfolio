@@ -1,0 +1,32 @@
+.md-typeset .admonition {
+    font-size: 12pt;
+}
+
+.md-typeset .admonition.narrow {
+    max-width: 500px;
+    margin-inline: auto;
+}
+
+.md-typeset .admonition.wide {
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+.md-typeset .admonition.half {
+    max-width: 50%;
+    margin-inline: auto;
+}
+
+.md-typeset .admonition.third {
+    max-width: 33%;
+    margin-inline: auto;
+}
+
+.md-typeset .admonition.twothirds {
+    max-width: 66%;
+    margin-inline: auto;
+}
+
+.md-typeset h5 {
+    font-size: 0pt;
+}
